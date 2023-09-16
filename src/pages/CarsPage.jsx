@@ -19,10 +19,7 @@ const Cars = () => {
   const [carsList, setCarsList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [carsPerPage] = useState(8);
-  const [loadedCarsCount, setLoadedCarsCount] = useState(0);
 
-  const totalPages = Math.ceil(loadedCarsCount / carsPerPage);
-  const isLoadMoreDisabled = loadedCarsCount >= totalPages * carsPerPage;
   const make = searchParams.get('make') || '';
   const rentalPrice = searchParams.get('rentalPrice') || '';
   const limit = carsPerPage;
@@ -44,12 +41,10 @@ const Cars = () => {
     if (page === 1) {
       getCars(query).then(data => {
         setCarsList(data);
-        setLoadedCarsCount(data.length);
       });
     } else {
       getCars(query).then(data => {
         setCarsList(carList => [...carList, ...data]);
-        setLoadedCarsCount(loadedCarsCount + data.length);
       });
     }
   }, [from, limit, make, page, rentalPrice, to, searchParams]);
@@ -86,13 +81,14 @@ const Cars = () => {
 
   const onClick = () => {
     const nextPage = currentPage + 1;
-    setCurrentPage(nextPage);
+
     setSearchParams({
       make,
       rentalPrice,
       limit,
       page: nextPage,
     });
+    setCurrentPage(nextPage);
   };
 
   return (
@@ -105,11 +101,7 @@ const Cars = () => {
         onModelChange={onModelChange}
         onRatesChange={onRatesChange}
       />
-      <CarsList
-        carsList={carsList}
-        onClick={onClick}
-        isLoadMoreDisabled={isLoadMoreDisabled}
-      />
+      <CarsList carsList={carsList} onClick={onClick} />
     </section>
   );
 };

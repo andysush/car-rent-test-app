@@ -2,6 +2,7 @@ import { CarsListItem } from 'components/CarsListItem/CarsListItem';
 import { GridContainer, LoadBtn } from './CarsList.styled';
 
 export const CarsList = ({ carsList, onClick, isLoadMoreDisabled }) => {
+  console.log('isLoadMoreDisabled:', isLoadMoreDisabled);
   return (
     <>
       <GridContainer>
