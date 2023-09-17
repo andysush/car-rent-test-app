@@ -32,7 +32,7 @@ const Home = () => {
 
       <ImageContainer>
         <img
-          src="https://res.cloudinary.com/dybx333rw/image/upload/v1694971912/Happy-travelers_kvrxvn.jpg"
+          src="https://res.cloudinary.com/dybx333rw/image/upload/v1694973373/luxury-cars_rdamfw.jpg"
           alt="Luxury car in a scenic location"
         />
         <p>Luxury Awaits You</p>

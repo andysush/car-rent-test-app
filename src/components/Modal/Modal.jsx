@@ -59,6 +59,7 @@ export const Modal = ({ isOpen, onClose, data }) => {
     address,
     type,
     model,
+    functionalities,
     id,
     accessories,
   } = data;
@@ -80,12 +81,7 @@ export const Modal = ({ isOpen, onClose, data }) => {
     .filter(Boolean)
     .join(' | ');
   const detailsRow3 = [...accessories].filter(Boolean).join(' | ');
-  const detailsRow4 = [
-    `Fuel Consumption: ${fuelConsumption}`,
-    `Engine Size: ${engineSize}`,
-  ]
-    .filter(Boolean)
-    .join(' | ');
+  const detailsRow4 = [...functionalities].filter(Boolean).join(' | ');
 
   const conditionsArray = rentalConditions.split('\n');
 
