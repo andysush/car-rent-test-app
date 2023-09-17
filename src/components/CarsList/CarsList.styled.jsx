@@ -31,4 +31,8 @@ export const LoadBtn = styled.button`
     color: white;
     background-color: #3470ff;
   }
+
+  :disabled {
+    display: none;
+  }
 `;

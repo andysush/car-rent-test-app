@@ -101,7 +101,11 @@ const Cars = () => {
         onModelChange={onModelChange}
         onRatesChange={onRatesChange}
       />
-      <CarsList carsList={carsList} onClick={onClick} />
+      <CarsList
+        carsList={carsList}
+        onClick={onClick}
+        isLoadMoreDisabled={carsList.length < carsPerPage * page}
+      />
     </section>
   );
 };
