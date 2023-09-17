@@ -1,8 +1,9 @@
+import { Container } from 'pages/Styles.styled';
 import { Li, Link, List } from './Navigtion.styled';
 
 export const Navigation = () => {
   return (
-    <div>
+    <Container>
       <List>
         <Li>
           <Link to="/">Main</Link>
@@ -14,6 +15,6 @@ export const Navigation = () => {
           <Link to="/favorites">Favorites</Link>
         </Li>
       </List>
-    </div>
+    </Container>
   );
 };

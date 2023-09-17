@@ -1,6 +1,14 @@
-import Select from 'react-select';
 import makes from '../../data/makes.json';
 import { Controller } from 'react-hook-form';
+import {
+  Form,
+  Input,
+  Label,
+  MileageContainer,
+  Selector,
+  SubmitButton,
+  selectStyles,
+} from './SearchForm.styled';
 
 const carModels = makes.map(option => ({
   value: option,
@@ -8,8 +16,8 @@ const carModels = makes.map(option => ({
 }));
 
 const hourlyRates = [];
-for (let i = 0; i <= 200; i += 10) {
-  hourlyRates.push({ value: i, label: `${i}` });
+for (let i = 0; i <= 300; i += 10) {
+  hourlyRates.push({ value: i, label: `To ${i} $` });
 }
 
 export const SearchForm = ({
@@ -30,15 +38,16 @@ export const SearchForm = ({
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <label>
+    <Form onSubmit={onSubmit}>
+      <Label>
         Car brand:
         <Controller
           name="make"
           control={control}
           render={({ field }) => (
-            <Select
+            <Selector
               options={carModels}
+              styles={selectStyles}
               {...field}
               value={initialMake && initialMake.length > 0 ? defaultMake : ''}
               onChange={selectedOption => {
@@ -49,15 +58,16 @@ export const SearchForm = ({
             />
           )}
         />
-      </label>
-      <label>
+      </Label>
+      <Label>
         Price/ 1 hour:
         <Controller
           name="rentalPrice"
           control={control}
           render={({ field }) => (
-            <Select
+            <Selector
               options={hourlyRates}
+              styles={selectStyles}
               {...field}
               value={initialRent && initialRent.length > 0 ? defaultRent : ''}
               onChange={selectedOption => {
@@ -68,47 +78,27 @@ export const SearchForm = ({
             />
           )}
         />
-      </label>
-      <label>
+      </Label>
+      <Label>
         Сar mileage / km:
-        <div>
+        <MileageContainer>
           <span>From </span>
           <Controller
             name="from"
             control={control}
             defaultValue=""
-            render={({ field }) => (
-              <input
-                type="number"
-                {...field}
-                style={{
-                  border: 'none',
-                  borderBottom: '1px solid #ccc',
-                  outline: 'none',
-                }}
-              />
-            )}
+            render={({ field }) => <Input type="number" {...field} />}
           />
           <span>To </span>
           <Controller
             name="to"
             control={control}
             defaultValue=""
-            render={({ field }) => (
-              <input
-                type="number"
-                {...field}
-                style={{
-                  border: 'none',
-                  borderBottom: '1px solid #ccc',
-                  outline: 'none',
-                }}
-              />
-            )}
+            render={({ field }) => <Input type="number" {...field} />}
           />
-        </div>
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+        </MileageContainer>
+      </Label>
+      <SubmitButton type="submit">Submit</SubmitButton>
+    </Form>
   );
 };

@@ -23,10 +23,6 @@ export const ModalWindow = styled.div`
   position: relative;
   padding: 40px;
   box-sizing: border-box;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 50px 25px; */
 `;
 
 export const ClsBtn = styled.button`
@@ -38,7 +34,7 @@ export const ClsBtn = styled.button`
   font-size: 24px;
   line-height: 1;
   cursor: pointer;
-  color: #333; /* Колір іконки закриття */
+  color: #333;
   padding: 0;
 
   :hover,
@@ -46,6 +42,7 @@ export const ClsBtn = styled.button`
     color: #3470ff;
   }
 `;
+
 export const CarImage = styled.img`
   width: 100%;
   height: 250px;
@@ -128,4 +125,8 @@ export const RentBtn = styled.a`
   :focus {
     background: #0b44cd;
   }
+`;
+
+export const Span = styled.span`
+  color: #3470ff;
 `;

@@ -16,12 +16,14 @@ export const Li = styled.li`
 export const Link = styled(NavLink)`
   display: inline-block;
   padding: 10px 20px;
-  border: 1px solid #5b65f5;
-  color: #5b65f5;
+  border: 1px solid #3470ff;
+  color: #3470ff;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &.active {
-    background-color: #5b65f5;
+    background-color: #3470ff;
     color: white;
   }
 `;

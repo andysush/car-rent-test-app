@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { AiFillHeart } from 'react-icons/ai';
 
 export const CardContainer = styled.li`
   display: flex;
@@ -81,4 +82,12 @@ export const LearnMoreBtn = styled.button`
   :focus {
     background: #0b44cd;
   }
+`;
+
+export const AiFill = styled(AiFillHeart)`
+  color: #3470ff;
+`;
+
+export const Span = styled.span`
+  color: #3470ff;
 `;

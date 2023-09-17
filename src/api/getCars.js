@@ -7,7 +7,7 @@ export const getCars = async query => {
     params: query,
   });
 
-  let filterData = data; // Початкове значення filterData
+  let filterData = data;
 
   if (query.rentalPrice !== '') {
     filterData = filterData.filter(

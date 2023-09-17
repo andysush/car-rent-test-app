@@ -13,6 +13,7 @@ import {
   RentBtn,
   RentalItems,
   RentalList,
+  Span,
   Title,
   TitleWrapper,
   Wrapper,
@@ -97,7 +98,7 @@ export const Modal = ({ isOpen, onClose, data }) => {
         <CarImage src={img} alt={`${make} ${model}`} />
         <TitleWrapper>
           <CarTitle>
-            {make} {model}, {year}
+            {make} <Span>{model}</Span>, {year}
           </CarTitle>
         </TitleWrapper>
         <CarDetails>

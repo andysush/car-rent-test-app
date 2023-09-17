@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSearchParams } from 'react-router-dom';
+import { Container } from './Styles.styled';
 
 const CarsPage = () => {
   const { control, handleSubmit, getValues } = useForm({
@@ -90,7 +91,7 @@ const CarsPage = () => {
   };
 
   return (
-    <section>
+    <Container>
       <SearchForm
         onSubmit={handleSubmit(onSubmit)}
         control={control}
@@ -104,7 +105,7 @@ const CarsPage = () => {
         onClick={onClick}
         isLoadMoreDisabled={carsList.length < carsPerPage * page}
       />
-    </section>
+    </Container>
   );
 };
 
