@@ -55,7 +55,6 @@ export const Modal = ({ isOpen, onClose, data }) => {
     mileage,
     rentalPrice,
     address,
-    rentalCompany,
     type,
     model,
     id,
