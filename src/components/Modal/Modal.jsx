@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { AiOutlineClose } from 'react-icons/ai';
 import {
   CarDetails,
   CarImage,
@@ -91,7 +92,7 @@ export const Modal = ({ isOpen, onClose, data }) => {
     <Overlay onClick={handleBackdropClick}>
       <ModalWindow>
         <ClsBtn type="button" onClick={onClose}>
-          &times;
+          <AiOutlineClose />
         </ClsBtn>
         <CarImage src={img} alt={`${make} ${model}`} />
         <TitleWrapper>

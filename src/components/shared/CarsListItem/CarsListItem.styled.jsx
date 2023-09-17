@@ -10,6 +10,11 @@ export const CardContainer = styled.li`
   box-sizing: border-box;
 `;
 
+export const ImgWrap = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
 export const CarImage = styled.img`
   width: 100%;
   height: 250px;
@@ -18,6 +23,17 @@ export const CarImage = styled.img`
   border-radius: 14px;
 `;
 
+export const FavBtn = styled.button`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  outline: none;
+`;
 export const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSearchParams } from 'react-router-dom';
 
-const Cars = () => {
+const CarsPage = () => {
   const { control, handleSubmit, getValues } = useForm({
     defaultValues: {
       make: '',
@@ -27,7 +27,6 @@ const Cars = () => {
   const from = searchParams.get('from') || '';
   const to = searchParams.get('to') || '';
 
-  console.log(page);
   useEffect(() => {
     const query = {
       make,
@@ -49,7 +48,6 @@ const Cars = () => {
     }
   }, [from, limit, make, page, rentalPrice, to, searchParams]);
 
-  console.log('carsList', carsList);
   const onSubmit = async () => {
     setSearchParams({
       make,
@@ -110,4 +108,4 @@ const Cars = () => {
   );
 };
 
-export default Cars;
+export default CarsPage;
