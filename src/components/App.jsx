@@ -7,7 +7,7 @@ import { Logo } from './Logo/Logo';
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/car-rent-test-app">
       <>
         <header>
           <Logo />
