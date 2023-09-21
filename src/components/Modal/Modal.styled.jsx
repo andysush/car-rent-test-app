@@ -4,13 +4,14 @@ export const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
 `;
 
 export const ModalWindow = styled.div`
@@ -19,7 +20,9 @@ export const ModalWindow = styled.div`
   border-radius: 14px;
   background-color: #f3f3f2;
   width: 640px;
-  height: 800px;
+  /* height: 800px; */
+  max-height: 80%; /* Максимальна висота контенту */
+  overflow-y: auto;
   position: relative;
   padding: 40px;
   box-sizing: border-box;
