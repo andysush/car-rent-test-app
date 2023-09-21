@@ -20,8 +20,7 @@ export const ModalWindow = styled.div`
   border-radius: 14px;
   background-color: #f3f3f2;
   width: 640px;
-  /* height: 800px; */
-  max-height: 80%; /* Максимальна висота контенту */
+  max-height: 80%;
   overflow-y: auto;
   position: relative;
   padding: 40px;
